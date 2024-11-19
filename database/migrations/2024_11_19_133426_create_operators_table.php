@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('surname');
             $table->string('email')->unique();
             $table->boolean('available')->default(true);;
             $table->timestamps();
