@@ -12,7 +12,7 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->enum('status', ['assegnato', 'in_lavorazione', 'chiuso'])->default('assegnato');
+            $table->enum('status', ['Assegnato', 'In lavorazione', 'Chiuso'])->default('Assegnato');
             $table->foreignId('operator_id')->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
