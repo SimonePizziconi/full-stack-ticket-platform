@@ -16,8 +16,10 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        @foreach ($users as $user)
+                            <h1>Benvenuto {{ $user->name }}</h1>
+                        @endforeach
 
-                        <h1>Sei Loggatooooooooo!</h1>
                     </div>
                 </div>
             </div>
