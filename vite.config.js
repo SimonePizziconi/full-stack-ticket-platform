@@ -12,6 +12,13 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    css: {
+        preprocessorOptions: {
+          scss: {
+            additionalData: `@import "./resources/scss/partials/variables.scss"; @import "./resources/scss/partials/general.scss";`
+          },
+        },
+      },
     // Add resolve object and aliases
     resolve: {
         alias: {

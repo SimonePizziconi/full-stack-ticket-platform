@@ -25,8 +25,17 @@
 
         @include('partials.header')
 
-        <main class="">
-            @yield('content')
+
+
+
+        <main>
+            @auth
+                @include('partials.side')
+            @endauth
+            <div class="main-container p-3">
+                @yield('content')
+            </div>
+
         </main>
     </div>
 </body>

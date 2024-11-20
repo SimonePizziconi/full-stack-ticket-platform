@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex justify-between">
             <a class="navbar-brand" href="#">Dashboard</a>
 
