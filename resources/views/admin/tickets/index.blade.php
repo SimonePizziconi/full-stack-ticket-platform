@@ -6,6 +6,7 @@
             <tr>
                 <th scope="col">Titolo</th>
                 <th scope="col">Stato</th>
+                <th scope="col">Azioni</th>
             </tr>
         </thead>
         <tbody>
@@ -14,6 +15,7 @@
                 <tr>
                     <td>{{ $ticket->title }}</td>
                     <td>{{ $ticket->status }}</td>
+                    <td><a href="{{ route('admin.ticket.show', $ticket) }}">Show</a></td>
                 </tr>
             @endforeach
 

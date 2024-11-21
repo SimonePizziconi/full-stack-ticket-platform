@@ -41,15 +41,15 @@ class TicketController extends Controller
 
         $new_ticket = Ticket::create($data);
 
-        return redirect()->route('admin.ticket.index', $new_ticket);
+        return redirect()->route('admin.ticket.show', $new_ticket);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Ticket $ticket)
     {
-        //
+        return view('admin.tickets.show', compact('ticket'));
     }
 
     /**
@@ -63,9 +63,13 @@ class TicketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Ticket $ticket)
     {
-        //
+        $data = $request->all();
+
+        $new_ticket = Ticket::create($data);
+
+        return redirect()->route('admin.ticket.show', $new_ticket);
     }
 
     /**
