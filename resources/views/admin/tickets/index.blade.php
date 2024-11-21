@@ -15,7 +15,8 @@
                 <tr>
                     <td>{{ $ticket->title }}</td>
                     <td>{{ $ticket->status }}</td>
-                    <td><a href="{{ route('admin.ticket.show', $ticket) }}">Show</a></td>
+                    <td><a href="{{ route('admin.ticket.show', $ticket) }}">Show</a><a
+                            href="{{ route('admin.ticket.edit', $ticket) }}">Edit</a></td>
                 </tr>
             @endforeach
 

@@ -3,6 +3,7 @@
 @section('content')
     <form action="{{ route('admin.ticket.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+
         <div class="form-floating mb-3">
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="floatingTitle" name="title"
                 placeholder="Titolo" value="{{ old('title') }}">

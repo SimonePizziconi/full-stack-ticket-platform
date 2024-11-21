@@ -55,22 +55,25 @@ class TicketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Ticket $ticket)
     {
-        //
+        $categories = Category::orderBy('name')->get();
+        $operators = Operator::orderBy('name')->get();
+        return view('admin.tickets.edit', compact('categories', 'operators', 'ticket'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(TicketRequest $request, Ticket $ticket)
     {
         $data = $request->all();
 
-        $new_ticket = Ticket::create($data);
+        $ticket->update($data);
 
-        return redirect()->route('admin.ticket.show', $new_ticket);
+        return redirect()->route('admin.ticket.show', $ticket);
     }
+
 
     /**
      * Remove the specified resource from storage.
