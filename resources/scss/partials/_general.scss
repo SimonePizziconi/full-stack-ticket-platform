@@ -35,6 +35,8 @@ main{
 
     .main-container{
         width: calc(100% - 250px);
+        height: calc(100vh - 80px);
+        overflow: hidden;
     }
 }
 

@@ -15,12 +15,32 @@ class TicketController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tickets = Ticket::orderBy('id', 'desc')->get();
+        // Recupera i filtri dalla richiesta
+        $status = $request->input('status');
+        $category = $request->input('category');
 
-        return view('admin.tickets.index', compact('tickets'));
+        // Costruisce la query
+        $query = Ticket::query();
+
+        if ($status) {
+            $query->where('status', $status);
+        }
+
+        if ($category) {
+            $query->where('category_id', $category);
+        }
+
+        // Esegue la query con paginazione
+        $tickets = $query->orderBy('created_at', 'desc')->paginate(10);
+
+        // Passa anche le categorie disponibili per il filtro
+        $categories = Category::orderBy('name')->get();
+
+        return view('admin.tickets.index', compact('tickets', 'categories'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,7 +61,7 @@ class TicketController extends Controller
 
         $new_ticket = Ticket::create($data);
 
-        return redirect()->route('admin.ticket.show', $new_ticket);
+        return redirect()->route('admin.ticket.index', $new_ticket)->with('success', '"' . $data['title'] .  '" è stato aggiunto correttamente');
     }
 
     /**
@@ -71,7 +91,7 @@ class TicketController extends Controller
 
         $ticket->update($data);
 
-        return redirect()->route('admin.ticket.show', $ticket);
+        return redirect()->route('admin.ticket.index');
     }
 
 

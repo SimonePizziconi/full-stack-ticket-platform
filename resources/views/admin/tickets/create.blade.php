@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('admin.ticket.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.ticket.store') }}" method="POST">
         @csrf
 
         <div class="form-floating mb-3">
