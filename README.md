@@ -1,7 +1,7 @@
-# **Support Ticket Platform**
+# **Ticket Platform**
 
 ## **Descrizione del progetto**
-Support Ticket Manager è un'applicazione Laravel progettata per consentire a un Admin di gestire i ticket di supporto attraverso un'interfaccia back-office. Include funzionalità per la gestione degli operatori, delle categorie e dei ticket.
+Ticket Platform è un'applicazione Laravel progettata per consentire a un Admin di gestire i ticket di supporto attraverso un'interfaccia back-office. Include funzionalità per la gestione degli operatori, delle categorie e dei ticket.
 
 ---
 
